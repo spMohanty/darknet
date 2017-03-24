@@ -440,6 +440,7 @@ void test_yolo(  char *cfgfile,
                 if(bot > im.h-1) bot = im.h-1;
 
                 fprintf(fout_box, "%s %d %d %d %d %f class %d \n", input, left, top, right-left, bot-top, prob, i_class );
+                printf(fout_box, "%s %d %d %d %d %f class %d \n", input, left, top, right-left, bot-top, prob, i_class );
             }
             fclose(fout_box);
 
