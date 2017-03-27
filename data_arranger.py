@@ -9,7 +9,7 @@ f = open("list_category_cloth.txt", "r").readlines()[2:]
 
 MAP = {}
 for _idx, _line in enumerate(f):
-    MAP[_idx] = _line.split()[0].strip()
+    MAP[_idx+1] = _line.split()[0].strip()
 
 import shutil
 import os
@@ -79,7 +79,7 @@ for _line in f:
     print fileName
 
 print "Writing sorted class map to classes.txt"
-sorted_labels_map = sorted(LABELS_MAP.items(), key=operator.itemgetter(1))
+sorted_labels_map = sorted(LABELS_MAP.items(), key=operator.itemgetter(0))
 classes = []
 for _x in sorted_labels_map:
     classes.append(_x[0])
