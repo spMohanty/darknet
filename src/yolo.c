@@ -82,6 +82,7 @@ void train_yolo(  char *cfgfile,
 
     // start training for net.max_batches "iterations"
     clock_t time;
+    printf("%d get_current_batch :: max.batch : %x",get_current_batch(net), net.max_batches);
     while(get_current_batch(net) < net.max_batches)
     {
         i_iter += 1;
