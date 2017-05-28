@@ -1,19 +1,19 @@
 GPU=1
-CUDNN=0
+CUDNN=1
 OPENCV=1
 DEBUG=0
 
 # old architecture on pretty old graphic cards come with small compute capabilities...
-ARCH= --gpu-architecture=compute_20 --gpu-code=compute_20
+#ARCH= --gpu-architecture=compute_20 --gpu-code=compute_20
 # more recent architectures on new graphic cards offer advanced compute capabilities
-# ARCH= --gpu-architecture=compute_52 --gpu-code=compute_52
+ARCH= --gpu-architecture=compute_52 --gpu-code=compute_52
 
 VPATH=./src/
 EXEC=darknet
 OBJDIR=./obj/
 
 CC=gcc
-NVCC=nvcc
+NVCC=/usr/local/cuda/bin/nvcc
 OPTS=-Ofast
 LDFLAGS= -lm -pthread 
 COMMON= 
@@ -33,11 +33,13 @@ COMMON+= `pkg-config --cflags opencv`
 endif
 
 ifeq ($(GPU), 1) 
-# COMMON+= -DGPU -I/usr/local/cuda/include/
-COMMON+= -DGPU -I/usr/local/cuda-7.5/include
+#COMMON+= -DGPU -I/usr/local/cuda/include/
+#COMMON+= -DGPU -I/usr/local/cuda-7.5/include
+COMMON+= -DGPU -I/usr/local/cuda-8.0/include
 CFLAGS+= -DGPU
 # LDFLAGS+= -L/usr/local/cuda/lib64 -lcuda -lcudart -lcublas -lcurand
-LDFLAGS+= -L/usr/local/cuda-7.5/lib64 -lcuda -lcudart -lcublas -lcurand
+#LDFLAGS+= -L/usr/local/cuda-7.5/lib64 -lcuda -lcudart -lcublas -lcurand
+LDFLAGS+= -L/usr/local/cuda-8.0/lib64 -lcuda -lcudart -lcublas -lcurand
 endif
 
 ifeq ($(CUDNN), 1) 

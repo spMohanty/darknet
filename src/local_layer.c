@@ -1,3 +1,6 @@
+#ifdef OPENCV
+#include "opencv2/videoio/videoio_c.h"
+#endif
 #include "local_layer.h"
 #include "utils.h"
 #include "im2col.h"

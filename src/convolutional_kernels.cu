@@ -2,6 +2,10 @@
 #include "curand.h"
 #include "cublas_v2.h"
 
+#ifdef OPENCV
+#include "opencv2/videoio/videoio_c.h"
+#endif
+
 extern "C" {
 #include "convolutional_layer.h"
 #include "batchnorm_layer.h"
@@ -12,6 +16,8 @@ extern "C" {
 #include "utils.h"
 #include "cuda.h"
 }
+
+
 
 __global__ void binarize_kernel(float *x, int n, float *binary)
 {

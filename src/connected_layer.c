@@ -1,3 +1,6 @@
+#ifdef OPENCV
+#include "opencv2/videoio/videoio_c.h"
+#endif
 #include "connected_layer.h"
 #include "batchnorm_layer.h"
 #include "utils.h"

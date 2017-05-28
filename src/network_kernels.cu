@@ -2,6 +2,10 @@
 #include "curand.h"
 #include "cublas_v2.h"
 
+#ifdef OPENCV
+#include "opencv2/videoio/videoio_c.h"
+#endif
+
 extern "C" {
 #include <stdio.h>
 #include <time.h>

@@ -1,3 +1,6 @@
+#ifdef OPENCV
+#include "opencv2/videoio/videoio_c.h"
+#endif
 #include "network.h"
 #include "cost_layer.h"
 #include "utils.h"

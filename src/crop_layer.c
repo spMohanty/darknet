@@ -1,3 +1,6 @@
+#ifdef OPENCV
+#include "opencv2/videoio/videoio_c.h"
+#endif
 #include "crop_layer.h"
 #include "cuda.h"
 #include <stdio.h>

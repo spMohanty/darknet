@@ -2,6 +2,10 @@
 #include "curand.h"
 #include "cublas_v2.h"
 
+#ifdef OPENCV
+#include "opencv2/videoio/videoio_c.h"
+#endif
+
 extern "C" {
 #include "network.h"
 #include "detection_layer.h"

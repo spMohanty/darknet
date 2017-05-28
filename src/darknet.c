@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+#ifdef OPENCV
+#include "opencv2/videoio/videoio_c.h"
+#endif
+
 #include "parser.h"
 #include "utils.h"
 #include "cuda.h"

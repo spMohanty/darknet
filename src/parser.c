@@ -1,3 +1,6 @@
+#ifdef OPENCV
+#include "opencv2/videoio/videoio_c.h"
+#endif
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>

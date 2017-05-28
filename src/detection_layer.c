@@ -1,3 +1,6 @@
+#ifdef OPENCV
+#include "opencv2/videoio/videoio_c.h"
+#endif
 #include "detection_layer.h"
 #include "activations.h"
 #include "softmax_layer.h"

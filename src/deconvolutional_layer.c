@@ -1,3 +1,8 @@
+
+#ifdef OPENCV
+#include "opencv2/videoio/videoio_c.h"
+#endif
+
 #include "deconvolutional_layer.h"
 #include "convolutional_layer.h"
 #include "utils.h"

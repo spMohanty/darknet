@@ -1,3 +1,6 @@
+#ifdef OPENCV
+#include "opencv2/videoio/videoio_c.h"
+#endif
 #include "normalization_layer.h"
 #include "blas.h"
 #include <stdio.h>

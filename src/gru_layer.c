@@ -1,3 +1,6 @@
+#ifdef OPENCV
+#include "opencv2/videoio/videoio_c.h"
+#endif
 #include "gru_layer.h"
 #include "connected_layer.h"
 #include "utils.h"
